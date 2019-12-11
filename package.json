@@ -1,0 +1,44 @@
+{
+  "name": "filmsline",
+  "version": "1.0.0",
+  "description": "Films Line",
+  "main": "index.js",
+  "engines": {
+    "node": "9.10.0"
+  },
+  "scripts": {
+    "heroku-postbuild": "npm install",
+    "clean": "rimraf build/",
+    "build": "npm run clean && babel src -d build",
+    "start": "npm run build && node build",
+    "dev": "nodemon --inspect -r dotenv/config -r babel-register src"
+  },
+  "author": "EgorNmv",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^5.0.0-alpha.6",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.8.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^7.0.0-beta.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^7.0.0-beta.3",
+    "babel-register": "^7.0.0-beta.3",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2"
+  }
+}
