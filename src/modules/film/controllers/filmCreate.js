@@ -1,20 +1,20 @@
 import mongoose from 'mongoose';
-import Todo from '../todoModel';
+import Film from '../filmModel';
 
-export default async function todoCreate(req, res) {
+export default async function filmCreate(req, res) {
   const _id = new mongoose.Types.ObjectId();
-  console.log(req);
-  const todo = new Todo({
+  const film = new Film({
     _id,
     name: req.body.name,
     description: req.body.description,
-    done: req.body.done,
+    img: req.body.img,
+    producer: req.body.producer,
   });
 
-  todo
+  film
     .save()
     .then(() => {
-      res.status(201).json('Todo created');
+      res.status(201).json('Film created');
     })
     .catch(err => {
       res.status(500).json(err);

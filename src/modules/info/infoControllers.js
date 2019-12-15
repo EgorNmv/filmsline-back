@@ -6,7 +6,7 @@ export const info = (req, res) => {
     localeString: now.toLocaleString(),
     getTimezoneOffset: now.getTimezoneOffset(),
     tz: process.env.TZ,
-    name: 'Todo server v0.1.0',
+    name: 'Films line',
   };
 
   res.status(200).json(message);

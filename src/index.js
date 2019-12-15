@@ -15,11 +15,11 @@ app.disable('x-powered-by'); // DISABLE EXPRESS SIGNATURE
 mongoConnection();
 logger(app);
 parseResponse(app);
+cookieParser(app);
 cors(app);
 ignoreFavicon(app);
 routes(app);
 errorHandling(app);
-cookieParser(app);
 
 app.listen(PORT, () => {
   console.log(`Node cluster worker ${process.pid}: listening on port ${PORT}`);
