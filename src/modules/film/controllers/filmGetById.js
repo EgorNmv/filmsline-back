@@ -6,7 +6,7 @@ const filmGetById = (req, res) => {
     .exec()
     .then(film => {
       if (film) {
-        res.status(200).json(film);
+        res.status(200).json({ status: 'ok', data: film });
       } else {
         res.status(404).json('No film for provided id');
       }

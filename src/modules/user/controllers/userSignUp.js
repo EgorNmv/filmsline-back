@@ -14,7 +14,7 @@ export default async function userSignUp(req, res) {
   user
     .save()
     .then(() => {
-      res.status(201).json('sign_up : true');
+      res.status(201).json({ status: 'ok', user: user });
     })
     .catch(err => {
       res.status(500).json(err);

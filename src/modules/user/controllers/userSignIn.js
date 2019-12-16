@@ -7,9 +7,9 @@ export default async function userSignIn(req, res) {
     .exec()
     .then(user => {
       if (user && user.password === password) {
-        res.status(200).json(user);
+        res.status(200).json({ status: 'ok', user: user });
       } else {
-        res.status(404).json('user not found');
+        res.status(404).json({ status: 'error', user: 'not found user' });
       }
     })
     .catch(err => {

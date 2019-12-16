@@ -5,7 +5,7 @@ const filmGetAll = (req, res) => {
     .select('-__v')
     .exec()
     .then(films => {
-      res.status(200).json(films);
+      res.status(200).json({ status: 'ok', data: films });
     })
     .catch(err => {
       res.status(500).json(err);
