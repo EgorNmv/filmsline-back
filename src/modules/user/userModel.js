@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema(
     username: { type: String, required: true },
     password: { type: String, required: true },
     type: { type: Number, required: true, default: 2 },
-    films: [{ film_name: String }],
+    films: [{ film_name: String, film_id: String }],
   },
   { timestamps: {} },
 );
