@@ -6,9 +6,9 @@ const filmSchema = mongoose.Schema(
     name: { type: String, required: true },
     description: { type: String },
     img: String,
-    producer: { producer_name: String },
-    start_rental: Number,
-    end_rental: Number,
+    producer: { producer_name: String, producer_id: String },
+    start_rental: String,
+    end_rental: String,
   },
   { timestamps: {} },
 );

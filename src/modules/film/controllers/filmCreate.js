@@ -3,13 +3,17 @@ import Film from '../filmModel';
 
 export default async function filmCreate(req, res) {
   const _id = new mongoose.Types.ObjectId();
-  console.info(req.body);
   const film = new Film({
     _id,
     name: req.body.name,
     description: req.body.description,
     img: req.body.img,
-    producer: req.body.producer,
+    producer: {
+      producer_name: req.body.producer_name,
+      producer_id: req.body.producer_id,
+    },
+    start_rental: req.body.start_rental || null,
+    end_rental: req.body.end_rental || null,
   });
 
   film
