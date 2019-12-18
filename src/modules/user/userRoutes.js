@@ -1,13 +1,15 @@
-import { Router } from 'express';
+import {Router} from 'express';
 
 import userSignIn from './controllers/userSignIn';
 import userSignUp from './controllers/userSignUp';
 import userGetAllProducers from './controllers/userGetAllProducers';
 import userDeleteById from './controllers/userDeleteById';
 import userGetById from './controllers/userGetById';
+import userGetAllUsers from './controllers/userGetAllUsers';
 
 const router = Router();
 
+router.get('/users', userGetAllUsers);
 router.post('/join', userSignUp);
 router.post('/login', userSignIn);
 router.get('/', userGetAllProducers);

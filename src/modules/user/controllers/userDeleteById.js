@@ -6,7 +6,7 @@ const userDeleteById = (req, res) => {
     .exec()
     .then(doc => {
       if (doc.n) {
-        res.status(200).json('User deleted');
+          res.status(200).json({status: 'ok'});
       } else {
         res.status(400).json('User not found');
       }
